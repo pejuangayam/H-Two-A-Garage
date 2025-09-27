@@ -73,6 +73,7 @@
         No. 100, Kampung Bayas, Mukim Ulu Melaka<br>
         07000 Langkawi, Kedah<br>
         H/P: 011-3296 2286
+        PUBLIC BANK: 4925854643 / MOHD ZUHAIRIE
     </div>
 </div>
 
@@ -80,10 +81,6 @@
     <div class="row">
         <span class="label">Name:</span>
         <span class="value">{{ $vehicle->name ?? '-' }}</span>
-    </div>
-    <div class="row">
-        <span class="label">No Phone:</span>
-        <span class="value">{{ $vehicle->noPhone }}</span>
     </div>
     <div class="row">
         <span class="label">Model:</span>
@@ -95,7 +92,7 @@
     </div>
     <div class="row">
         <span class="label">Kilometer:</span>
-        <span class="value">{{ $vehicle->kilometer ? $vehicle->kilometer . ' km' : '-' }}</span>
+        <span class="value">{{ $vehicle->kilometer ? number_format($vehicle->kilometer, 0, '.', '') . ' km' : '-' }}</span>
     </div>
 
     {{-- Invoice Date (left) and Invoice No (right) --}}
