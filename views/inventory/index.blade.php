@@ -183,7 +183,9 @@
         {{-- Pagination --}}
         @if($carParts->hasPages())
         <div class="d-flex justify-content-center mt-4">
-            {{ $carParts->links() }}
+            <div class="pagination-wrapper">
+                {{ $carParts->links('pagination::bootstrap-5') }}
+            </div>
         </div>
         @endif
     @endif
@@ -212,6 +214,43 @@
 
     .card:hover {
         transform: translateY(-2px);
+    }
+
+    /* 🔹 Pagination Redesign */
+    .pagination-wrapper .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        border-radius: 30px;
+        padding: 4px 6px;
+    }
+
+    .page-link {
+        border: none !important;
+        border-radius: 20px !important;
+        padding: 0.55rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background-color: #f0f2f5;
+        color: #3498db;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .page-link:hover {
+        background-color: #3498db;
+        color: #fff;
+    }
+
+    .page-item.active .page-link {
+        background-color: #3498db !important;
+        color: #fff !important;
+        font-weight: 600;
+    }
+
+    .page-item.disabled .page-link {
+        background-color: #e9ecef !important;
+        color: #adb5bd !important;
+        pointer-events: none;
     }
 </style>
 
